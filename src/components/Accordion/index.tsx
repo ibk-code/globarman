@@ -146,6 +146,7 @@ const AccordionWrapper = styled.div`
 const AccordionButton = styled.div`
   background: transparent;
   border: none;
+  cursor: pointer;
 
   & h4 {
     font-weight: 700;

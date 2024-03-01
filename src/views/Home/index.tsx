@@ -106,8 +106,7 @@ const Navbar = styled.nav`
   max-width: 1280px;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
+  padding: 1.5rem 14px;
   display: flex;
   justify-content: space-between;
 `;
@@ -211,6 +210,7 @@ const Footer = styled.footer`
   margin-right: auto;
   display: flex;
   justify-content: space-between;
+  padding: 1rem 14px;
   align-items: center;
   flex-wrap: wrap;
   margin-top: 4rem;
