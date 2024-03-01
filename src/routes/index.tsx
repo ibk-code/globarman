@@ -1,10 +1,13 @@
 // ----------- import external dependencies -------------
-import React from "react";
+import { lazy } from "react";
 import { createBrowserRouter } from "react-router-dom";
+
+// -------------- import internal dependencies ----------------
+const Home = lazy(() => import("../views/Home"));
 
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <div>Hello world!</div>,
+    element: <Home />,
   },
 ]);

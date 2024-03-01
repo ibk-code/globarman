@@ -23,7 +23,7 @@ function Seo({
   return (
     <>
       <Helmet>
-        <title>{`Mudal Client Merchant - ${page || "Home"}`}</title>
+        <title>{`GlobarMan - ${page || "Home"}`}</title>
       </Helmet>
       {allowSkip && <SkipToContent content={content} section={section} />}
       {children}
