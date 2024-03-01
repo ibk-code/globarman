@@ -19,6 +19,7 @@
   min-width: 100px;
   border: none;
   font-family: Inter;
+  cursor: pointer;
 }
 
 .btn-sm {

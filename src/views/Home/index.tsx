@@ -3,16 +3,26 @@ import styled from "styled-components";
 import { FiArrowUpRight } from "react-icons/fi";
 
 // -------------- import internal dependencies ---------------
-import Seo from "../../shared/Seo";
+import Seo from "../../components/Seo";
 import LogoBeta from "../../assets/img/logo-beta.png";
-import { profileImg, companyImg } from "../../utils/data";
+import { profileImg, companyImg, accordionData } from "../../utils/data";
+import { Accordion } from "../../components/Accordion";
 
 const Home = () => {
   return (
     <Seo section="main" content="Skip to Content" page="HOME" allowSkip>
       <Header>
         <Navbar>
-          <img src={LogoBeta} className="h-[35px]" alt="Global man Beta logo" />
+          <img
+            src="./assets/img/logo-beta.png"
+            className="h-[35px] md:block hidden"
+            alt="Global man Beta logo"
+          />
+          <img
+            src="./assets/img/brand.png"
+            className="h-[35px] md:hidden sm:block"
+            alt="Global man Beta logo"
+          />
           <button className="btn bg-green-primary btn-sm flex items-center justify-between">
             <span className="text-sm text-green-text font-semibold px-2">
               Request A Call Back
@@ -59,11 +69,28 @@ const Home = () => {
           </TrustedCompanies>
         </HeroWrapper>
       </Header>
-      <main id="main">
+      <Main id="main">
         <section>
           <FAQHeader>Frequently Asked Questions</FAQHeader>
+          <Accordion.Group>
+            {accordionData.map((data, ind) => (
+              <Accordion title={data.title} key={ind}>
+                <AccordionContent>{data.content}</AccordionContent>
+              </Accordion>
+            ))}
+          </Accordion.Group>
         </section>
-      </main>
+      </Main>
+      <Footer>
+        <img
+          src="./assets/img/logo.png"
+          className="h-[25px]"
+          alt="Global man Beta logo"
+        />
+        <span className="font-inter text-sm block font-bold">
+          Copyright © 2024
+        </span>
+      </Footer>
     </Seo>
   );
 };
@@ -80,16 +107,16 @@ const Navbar = styled.nav`
   max-width: 1280px;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
   display: flex;
   justify-content: space-between;
 `;
 
 const HeroWrapper = styled.div`
   background-color: var(--bg-color);
-  height: 650px;
-  padding-top: 3rem;
+  min-height: 650px;
+  padding: 3rem 14px;
 
   & > article {
     h1 {
@@ -98,22 +125,22 @@ const HeroWrapper = styled.div`
       color: var(--green-2);
       font-weight: 700;
       font-size: 3rem;
-      line-height: 65px;
+      line-height: 1.35;
     }
 
     p {
       font-family: Inter;
       text-align: center;
-      font-weight: 500;
-      font-size: 1rem;
+      font-weight: 400;
+      font-size: 1.125rem;
       color: var(--grey);
-      margin-top: 1rem;
+      margin-top: 1.5rem;
     }
   }
 `;
 
 const TrustedWrapper = styled.div`
-  margin-top: 2rem;
+  margin-top: 3rem;
   & > .trusted-heading {
     font-size: 0.875rem;
     font-family: Inter;
@@ -148,6 +175,7 @@ const TrustedCompanies = styled.div`
   display: flex;
   justify-content: center;
   gap: 20px;
+  flex-wrap: wrap;
 
   & img {
     width: 130px;
@@ -156,9 +184,36 @@ const TrustedCompanies = styled.div`
   }
 `;
 
+const Main = styled.main`
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+`;
+
 const FAQHeader = styled.h2`
-  margin-top: 2rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
   text-align: center;
   font-size: 2rem;
   font-family: Space Grotesk;
+`;
+
+const AccordionContent = styled.span`
+  color: var(--grey-2);
+  font-size: 1rem;
+  padding: 1rem 0;
+  display: block;
+  font-family: Inter;
+`;
+
+const Footer = styled.footer`
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 4rem;
+  margin-bottom: 3rem;
 `;
