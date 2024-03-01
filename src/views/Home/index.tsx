@@ -4,7 +4,6 @@ import { FiArrowUpRight } from "react-icons/fi";
 
 // -------------- import internal dependencies ---------------
 import Seo from "../../components/Seo";
-import LogoBeta from "../../assets/img/logo-beta.png";
 import { profileImg, companyImg, accordionData } from "../../utils/data";
 import { Accordion } from "../../components/Accordion";
 
