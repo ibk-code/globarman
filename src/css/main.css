@@ -33,3 +33,16 @@
   padding-left: 1.4rem;
   padding-right: 1.4rem;
 }
+
+.accordion-body {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
