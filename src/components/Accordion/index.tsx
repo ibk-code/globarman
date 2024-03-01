@@ -143,10 +143,11 @@ const AccordionWrapper = styled.div`
   }
 `;
 
-const AccordionButton = styled.div`
+const AccordionButton = styled.button`
   background: transparent;
   border: none;
   cursor: pointer;
+  text-align: left;
 
   & h4 {
     font-weight: 700;

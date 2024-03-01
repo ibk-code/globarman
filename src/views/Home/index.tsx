@@ -72,7 +72,11 @@ const Home = () => {
         <section>
           <FAQHeader>Frequently Asked Questions</FAQHeader>
           <Accordion.Group>
-            {accordionData.map((data, ind) => (
+            {(
+              (process.env.ACCORDION_DATA
+                ? process.env.ACCORDION_DATA
+                : accordionData) as []
+            ).map((data: any, ind) => (
               <Accordion title={data.title} key={ind}>
                 <AccordionContent>{data.content}</AccordionContent>
               </Accordion>
@@ -196,7 +200,7 @@ const FAQHeader = styled.h2`
   font-family: Space Grotesk;
 `;
 
-const AccordionContent = styled.span`
+const AccordionContent = styled.p`
   color: var(--grey-2);
   font-size: 1rem;
   padding: 1rem 0;

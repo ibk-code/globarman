@@ -9,7 +9,7 @@ import "./css/main.css";
 function App() {
   return (
     <>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<div></div>}>
         <RouterProvider router={router} />
       </Suspense>
     </>
