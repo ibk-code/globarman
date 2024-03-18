@@ -34,11 +34,15 @@ const Home = () => {
         <HeroWrapper>
           <article>
             <h1>
-              Your Immigration <br /> experience, Simplified
+              Stress-free relocation to UK 🇬🇧, USA 🇺🇸 <br /> , Portugal 🇵🇹 or
+              Malta 🇲🇹
             </h1>
             <p>
-              Globarman helps ambitious tech talent navigate the <br />
-              complexities of immigration with ease
+              At Globarman, we help ambitious professionals navigate and
+              simplify their{" "}
+              <span className="text-green-text font-bold">talent visas</span>
+              <br />
+              journey with our expert guidance.
             </p>
           </article>
           <button className="btn bg-green-primary btn-md flex items-center justify-between mx-auto mt-8">
